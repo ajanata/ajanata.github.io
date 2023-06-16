@@ -1,0 +1,7 @@
+---
+layout: post
+title:  "Hi"
+date:   2023-06-15 18:55:36 -0700
+categories: blog welcome
+---
+I'm clearly never going to actually make a real, proper website myself anymore at this point, so I'm going to try using Jekyll and Github Pages. No idea how much I'll actually post stuff here, but I'd like to actually try.
