@@ -1,0 +1,75 @@
+---
+layout: post
+title:  "On Further Confusion 2024"
+date:   2024-01-27 20:30:00 -0700
+categories:
+    - blog
+tags:
+    - furry
+    - convention
+---
+Hi. I haven't posted anything here, and I'm not surprised it took this long to get started.
+But I have a bunch of ideas of things to post, so I'm going to try to keep up with actually posting.
+For a bit at least.
+
+Content warning: MH; Brief mentions of wearing latex and background sexual scenes. Not explicit.
+
+So I went to Further Confusion again this year, for the... seventh time?
+I haven't missed a year since I started going in 2016,
+other than the obvious exceptions of 2021 and 2022 when the convention didn't happen.
+When I got home, I tooted that I had some thoughts to share about my experience:
+
+<iframe src="https://furry.engineer/@Elbrar/111762395049090288/embed" class="mastodon-embed" style="max-width: 100%; border: 0" width="400" allowfullscreen="allowfullscreen"></iframe><script src="https://furry.engineer/embed.js" async="async"></script>
+<!--more-->
+
+I didn't intend to take almost 2 weeks to get around to actually doing this, but gosh darn it, I'm gonna do it now.
+Or at least cover the important bits.
+
+I want to start by rehashing the sentiment of that toot:
+I had a blast, it was a massively positive experience with hardly any negatives,
+and at no point did I feel "I wish I had stayed home" or "I really do not want to go home."
+Not overly long, and not too short. An ideal length.
+
+There was a point during the weekend, while riding a dopamine high and determined to stay out for a little while longer,
+that I came to a realization:
+This was the first decent-sized con since 2019[^1]
+that I wasn't either volunteering at the con (and therefore "busy" most of the time)[^2],
+struggling with a mental health issue,
+or had something negative happen at the con itself that ruined my mood for the rest of the weekend.[^3]
+In short, I hadn't had a good, fun con with no responsibilities since before COVID, and I kinda forgot what it was like.
+
+I came to this realization while I was chatting with an acquaintance ~~late Saturday night~~ early Sunday morning,
+at that time of night where you're too tired to keep partying, but it's too early to go to bed.
+Of course, since it was Saturday night, there was both the party floor and the Night Market going on,
+and I was wearing my full-body latex cat getup for the occasion,
+which is even more of a reason to not want to go back to my room yet.
+I went over to a friend's suite (probably around 1 AM), where they were having a low-key gathering.
+Three of the four people there were having a scene,
+so I just ended up chatting with said acquaintance for about half an hour before deciding it well and truly was time to turn in for the night.
+
+Anyway, I just wanted to brain dump this.
+Here's hoping that the trend continues, and I can manage to get to more cons this year.
+I coincidentally have a work trip in Atlanta the day after FWA, so I'm gonna hit that up.
+Maybe hit DEF CON finally, too.
+
+I have some technical blog post ideas that I want to write up soon.
+I can't promise any sort of cadence for posts, but hopefully more often than every 6 months.
+
+[^1]: PAWCon 2021 and 2022 were pretty good, but those are the only exceptions during that entire period,
+    and while I love that con, it is (or at least was) tiny and therefore doesn't count for this.
+    I was only at Furvana 2021 for 25 hours while passing through the area so that also doesn't count (and it's also tiny).
+
+[^2]: I absolutely love volunteering at BLFC, and have a blast doing it,
+    but I end up spending most of my time "working" and don't get to do many actual con things
+    (by choice! Because I very much like playing with the expensive video equipment).
+
+[^3]: I don't _really_ want to go into full details of everything, but the highlights (lowlights?) are:
+    * I was in a really bad place for most of FC 2020 for self-inflicted personal reasons. The details don't matter.
+    * TFF 2020 was still recovering from those same problems.
+    * Furvana 2021 was only 25 hours for me, but it was neat, I guess.
+    * FC 2023 got derailed fairly quickly when I had a major latex blowout Friday night,
+        and that ruined my mood for the rest of the weekend.
+    * BLFC 2021, 2022, and 2023 had increasingly large volunteer/staff commitments
+        (but they were still amazing in their own way).
+    * PAWCon 2021, 2022, and 2023 were pretty good (though I was exhausted in 2023 since it was immediately after BLFC),
+        but that con's size and vibe are completely different from other cons, so it doesn't really count.

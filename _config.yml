@@ -24,20 +24,39 @@ description: >- # this means to ignore newlines until "baseurl:"
   Elbrar's corner of the internet. No idea how much stuff is actually going to end up here.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://elbrarc.at" # the base hostname & protocol for your site, e.g. http://example.com
-#twitter_username: jekyllrb
-github_username: ajanata
-youtube_username: ajanata
-mastodon:
-  - username: Elbrar
-    instance: furry.engineer
+
+author:
+  name: Elbrar
+  email: meow@elbrarc.at
+
+# theme settings
+minima:
+  skin: dark
+  social_links:
+    - platform: mastodon
+      title: Mastodon
+      user_url: "https://furry.engineer/@Elbrar"
+    - platform: github
+      title: GitHub
+      user_url: "https://github.com/ajanata"
+    - platform: telegram
+      title: Telegram
+      user_url: "https://t.me/elbrar"
+    - platform: youtube
+      title: YouTube
+      user_url: "https://www.youtube.com/ajanata"
+    - platform: furaffinity
+      title: Fur Affinity
+      user_url: "https://furaffinity.net/user/elbrar"
 
 # Build settings
-theme: minima
+remote_theme: jekyll/minima@master
+
 plugins:
   - jekyll-feed
   - jekyll-archives
   - jemoji
-#  - jekyll-remote-theme
+  - jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -60,8 +79,7 @@ exclude:
   - vendor/ruby/
   - .idea/
 
-
 timezone: America/Los_Angeles
 host: 0.0.0.0
 show_excerpts: true
-#remote_theme: jekyll/minima@master
+excerpt_separator: <!--more-->
