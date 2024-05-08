@@ -55,8 +55,8 @@ remote_theme: jekyll/minima@master
 plugins:
   - jekyll-feed
   - jekyll-archives
-  - jemoji
   - jekyll-remote-theme
+  - jemoji
 
 # Exclude from processing.
 # The following items will not be processed, by default.
