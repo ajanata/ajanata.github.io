@@ -178,7 +178,7 @@ but I'm not going to explain how to do that.
 We need to start by installing it: `sudo apt install clevis clevis-initramfs clevis-tpm2`
 
 Assuming you want to use [the same PCRs that I described above](#pcr-list), it should be as simple as:
-`sudo clevis luks bind -d /dev/nvme0n1p3 tpm2 '{"pcr_ids":"0,1,4,5,7,8,9"}'`
+`sudo clevis luks bind -d /dev/nvme0n1p3 tpm2 '{"pcr_bank": "sha256", "pcr_ids":"0,1,4,5,7,8,9"}'`
 
 Reboot. Depending on your chosen PCRs, it may either immediately boot automatically,
 or you may have to enter the password one last time and then run the [script below](#tpm-script)
@@ -224,7 +224,7 @@ as that depends on the state of the kernel image and initramfs _as the currently
 #!/bin/sh
 
 sudo clevis luks unbind -s 1 -d /dev/nvme0n1p3
-sudo clevis luks bind -d /dev/nvme0n1p3 tpm2 '{"pcr_ids":"0,1,4,5,7,8,9"}'
+sudo clevis luks bind -d /dev/nvme0n1p3 tpm2 '{"pcr_bank": "sha256", "pcr_ids":"0,1,4,5,7,8,9"}'
 ```
 {: #tpm-script}
 
