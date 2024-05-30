@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Enabling Hibernation on Ubuntu 24.04 with Full-Disk Encryption using the TPM"
-#date:   2024-01-27 20:30:00 -0700
+date:   2024-05-30 09:00:00 -0700
 categories:
     - blog
 tags:
@@ -16,6 +16,7 @@ It's not too difficult to use FDE with the TPM and Secure Boot on Ubuntu 24.04
 but what if you want hibernation support?
 The kernel hard-disables hibernation when Secure Boot is enabled, so you obviously can't have all four at once...
 But you can have either of those with both of the others, and switch between them at will.
+This even includes having the hibernate image in encrypted swap.
 This took me a couple of days of fighting with multiple distros to try to get what I wanted
 (including several hours just trying to get Arch to _boot_), and I finally figured it out with Ubuntu 24.04.
 
@@ -54,13 +55,12 @@ so it should be Safe Enough&trade;.
 If you're careful enough to only type the unlock password on boot when you're expecting to need to
 (e.g. you just updated the kernel), it should be reasonably secure.
 Even an attempt to inject something into the initramfs (on the unencrypted `/boot` partition)
-would be foiled by PCR 9 detecting that it has changed.
+would be foiled by PCR 9 detecting that it has changed (short of finding a hash collision).
 
 ### Notes
-I am assuming that you are installing onto `/dev/nvme0n1`.
+* I am assuming that you are installing onto `/dev/nvme0n1`.
 Substitute appropriately if required (e.g. `/dev/sda`).
-
-I use KDE. I don't know how to get hibernate to show up in other desktop environments, if it doesn't show up by default.
+* I use KDE. I don't know how to get hibernate to show up in other desktop environments, if it doesn't show up by default.
 
 ### Installation
 Install Ubuntu 24.04 with the full-disk encryption option, but _not_ the TPM option.
@@ -87,8 +87,9 @@ We're going to adjust the disk layout a bit when it's done anyway
 Once the installer is completed, boot it up to make sure it's working (using the password you just set for the disk),
 and then boot back into the installer again (we need to do these steps with the filesystem unmounted).
 Close the actual installer when it pops up, and open a terminal.
-We're going to shrink the `/` filesystem, resize its LVM volume, expand it back to the full size of its volume,
-and then add a new logical volume for swap.
+We're going to shrink the `/` filesystem, resize its LVM volume,
+expand the filesystem back to the full size of its volume,
+and then add a new (encrypted) logical volume for swap.
 
 First, we have to unlock the encrypted disk: `sudo cryptsetup luksOpen /dev/nvme0n1p3 dm_crypt-0`
 
@@ -111,7 +112,7 @@ Take the number of blocks and multiply it by the block size.
 
 ![screenshot](/assets/img/ubuntu-fde-hibernate-tpm-secureboot/03-resize2fs.png)
 
-In this example, we'd do 2993374 * 4 / 1024 / 1024 to get about 11.4 GB, which sounds about right.
+In this example, we'd do `2993374 * 4 / 1024 / 1024` to get about 11.4 GB, which sounds about right.
 This just means that we can't make the volume for `/` any smaller than that,
 and we're not going to make it nearly that small anyway.
 
@@ -145,12 +146,13 @@ Now edit `/etc/fstab` and change the line for `/swap.img` to `/dev/mapper/ubuntu
 Finally, let's turn off the old swap, delete it, and turn on the new swap:
 `sudo swapoff /swap.img && sudo swapon -a && sudo rm /swap.img`
 
-That's step one, full disk encryption, done.
+That's step one, full disk encryption, done, and we've prepared almost everything we need for hibernate, too.
 
 ### Hibernate
 Now that we have a swap partition, we're close to having hibernate work.
-In fact, all we should have to do is regenerate the initramfs so that it notices we have a swap partition:
-`sudo update-initramfs -u`.
+In fact, all we should have to do is regenerate the initramfs
+so that it notices we have a swap partition on hibernate-resume boots:
+`sudo update-initramfs -u`
 
 At this point, hibernate should work, but your desktop environment might not expose it.
 Let's install pm-utils so we can check: `sudo apt install pm-utils`
@@ -246,4 +248,4 @@ and be on your way with hibernate again.
 Do one final test of putting the laptop into hibernation from your desktop environment and then turning it back on.
 It should Just Work&trade;!
 
-Make sure you back up your LUKS header!
+Make sure you back up your LUKS header and store it somewhere safe!
