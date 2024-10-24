@@ -6,8 +6,8 @@ permalink: /about/
 
 One of these days I'll (maybe) properly fill stuff out here. In the meantime, here's a quick rundown:
 
-* Mid-30s
-* Non-binary (they/them)
+* Late 30s
+* Trans-fem Non-binary (they/them)
 * SF Bay Area
 * Furry and Rubbery :cat:
 * Software Engineer
